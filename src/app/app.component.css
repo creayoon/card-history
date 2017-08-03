@@ -1,0 +1,93 @@
+body {
+  margin-top: 50px;
+}
+
+.stack {
+  margin: 0 auto;
+    position: relative;
+    z-index: 1000;
+    width: 320px;
+    height: 320px;
+    padding: 0;
+    list-style: none;
+    pointer-events: none;
+
+    perspective: 1000px;
+      perspective-origin: 50% -50%;
+}
+
+
+.stack-item {
+  /*background: #fff;*/
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: auto;
+}
+
+/*item*/
+.test0 {
+  background-color: green;
+        opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+    transform: matrix3d(1, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 200, -50, 1);
+
+    -webkit-animation: mymove 2s infinite;  Safari 4.0 - 8.0
+    animation: mymove 2s infinite;
+}
+.move {
+  /*@-webkit-keyframes mymove {
+    from {transform: matrix3d(1, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 200, -50, 1);}
+    to {transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -50, 1);}
+  }
+  @keyframes mymove {
+      from {transform: matrix3d(1, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 200, -50, 1);}
+      to {transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -50, 1);}
+  }*/
+}
+
+
+.test1 {
+  background-color: yellow;
+        opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -50, 1);
+}
+.test2 {
+  background-color: blue;
+      opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -100, 1);
+}
+.test3 {
+  background-color: red;
+      opacity: 1;
+    pointer-events: none;
+    z-index: -1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -150, 1);
+}
+
+.test {
+  background-color: red;
+      opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transform: translate3d(0px, 0px, -150px);
+}

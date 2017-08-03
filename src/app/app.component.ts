@@ -1,10 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements OnInit {
+  @ViewChild('history') history;
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+    console.log(222, this.history)
+  }
+
+  move(e) {
+    // let element = this.history.nativeElement.style.transform
+    // let element = this.history.nativeElement.children;
+
+    // e.target.style.zIndex =
+    // e.target.style.transform = 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -50, 1)';
+
+    // console.log(element)
+
+    let element = this.history.nativeElement.classList;
+    element.add('move');
+
+    console.log(e, element);
+  }
+
+  animation() {
+
+
+  // matrix3d(1, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 200, -50, 1)
+  }
+
 }
