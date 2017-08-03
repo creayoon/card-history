@@ -46,21 +46,22 @@ body {
     pointer-events: auto;
     z-index: 2;
     transform: matrix3d(1, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 200, -50, 1);
-
-    -webkit-animation: mymove 2s infinite;  Safari 4.0 - 8.0
-    animation: mymove 2s infinite;
 }
+
 .move {
-  /*@-webkit-keyframes mymove {
+  -webkit-animation: mymove 2s;  Safari 4.0 - 8.0
+    animation: mymove 2s;
+    /*infinite*/
+}
+
+@-webkit-keyframes mymove {
+  from {transform: matrix3d(1, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 200, -50, 1);}
+  to {transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -50, 1);}
+}
+@keyframes mymove {
     from {transform: matrix3d(1, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 200, -50, 1);}
     to {transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -50, 1);}
-  }
-  @keyframes mymove {
-      from {transform: matrix3d(1, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 1, 0, 0, 200, -50, 1);}
-      to {transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -50, 1);}
-  }*/
 }
-
 
 .test1 {
   background-color: yellow;

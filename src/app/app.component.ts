@@ -25,10 +25,15 @@ export class AppComponent implements OnInit {
 
     // console.log(element)
 
-    let element = this.history.nativeElement.classList;
-    element.add('move');
-
+    let element = this.history.nativeElement.firstChild.nextElementSibling.classList;
     console.log(e, element);
+
+    if (element.contains('move')) {
+      element.remove('move');
+    } else {
+      element.add('move');
+    }
+
   }
 
   animation() {
